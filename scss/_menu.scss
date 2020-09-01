@@ -1,3 +1,4 @@
+// Menu button
 .menu-btn {
   position: absolute;
   top: 35px;
@@ -34,5 +35,93 @@
         transform: rotate(-45deg) translate(3px, -3px);
       }
     }
+  }
+}
+
+// Menu overlay
+.menu {
+  visibility: hidden;
+  display: flex;
+  opacity: 0.9;
+  position: fixed;
+  width: 100%;
+
+  &.show {
+    visibility: visible;
+    height: 100vh;
+  }
+
+  &-branding,
+  &-nav {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include easeOut;
+  }
+
+  // Branding side
+  &-branding {
+    background-color: $primary-color;
+    transform: translate3d(0, 100%, 0);
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    .portrait {
+      background-image: url('../img/portrait.jpg');
+      background-size: cover;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      border: 3px solid $secondary-color;
+    }
+  }
+
+  // Nav side
+  &-nav {
+    background-color: darken($primary-color, 5);
+    transform: translate3d(0, -100%, 0);
+
+    &.show {
+      transform: translate3d(0, 0, 0);
+    }
+
+    // Nav item
+    .nav-item {
+      transform: translate3d(600px, 0, 0);
+      @include easeOut;
+
+      &.show {
+        transform: translate3d(0, 0, 0);
+      }
+
+      &.current > a {
+        color: $secondary-color;
+      }
+    }
+
+    // Nav link
+    .nav-link {
+      display: inline-block;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      font-weight: 300;
+      font-size: 1.8rem;
+
+      &:hover {
+        color: $secondary-color;
+      }
+    }
+  }
+}
+
+// Delay each nav item slide by 0.1s
+@for $x from 1 through 4 {
+  .nav-item:nth-child(#{$x}) {
+    transition-delay: $x * 0.1s;
   }
 }
