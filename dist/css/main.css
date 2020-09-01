@@ -8,7 +8,7 @@
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
-    background-color: white;
+    background-color: #fff;
     margin-bottom: 5px;
     transition: all 0.5s ease-out; }
   .menu-btn.close {
@@ -96,13 +96,43 @@
     color: #eece1a;
     transition: all 0.5s ease-out; }
 
+.about-info {
+  display: grid;
+  grid-template-areas: 'bioimage bio bio' 'job-1 job-2 job-3';
+  grid-gap: 2rem;
+  padding: 2rem 0;
+  grid-template-columns: repeat(3, 1fr);
+  font-size: 1.2rem; }
+  .about-info .bio-image {
+    grid-area: bioimage;
+    max-width: 250px;
+    width: 100%;
+    margin: auto;
+    border-radius: 50%;
+    border: 3px solid #444; }
+  .about-info .bio {
+    grid-area: bio;
+    font-size: 1.5rem; }
+  .about-info .job-1 {
+    grid-area: job-1; }
+  .about-info .job-2 {
+    grid-area: job-2; }
+  .about-info .job-3 {
+    grid-area: job-3; }
+  .about-info .job {
+    border-bottom: 5px solid #eece1a;
+    background-color: #515151;
+    padding: 1rem; }
+    .about-info .job h6 {
+      margin-bottom: 0.5rem; }
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
 
 a {
-  color: white;
+  color: #fff;
   text-decoration: none; }
 
 li {
@@ -125,7 +155,7 @@ h3 {
     font-size: 1.5rem; }
 
 body {
-  color: white;
+  color: #fff;
   background-color: #444;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5; }
@@ -144,20 +174,29 @@ body {
       z-index: -1; }
 
 main {
-  padding: 4rem; }
+  padding: 4rem;
+  min-height: calc(100vh - 60px); }
 
 header {
   position: fixed;
   width: 100%;
   z-index: 2; }
 
+footer {
+  text-align: center;
+  padding: 1rem;
+  height: 60px;
+  background-color: #2b2b2b;
+  color: #fff; }
+
 @media screen and (max-width: 768px) {
   main {
     text-align: center; }
-    main#home h1 {
-      margin-top: 10vh;
+    main h1 {
       margin-bottom: 1rem;
       line-height: 1.2; }
+    main#home h1 {
+      margin-top: 10vh; }
   .menu {
     flex-direction: column; }
     .menu-branding, .menu-nav {
@@ -172,7 +211,10 @@ header {
       transform: translate3d(100%, 0, 0);
       height: 75vh; }
       .menu-nav .nav-link {
-        font-size: 1.5rem; } }
+        font-size: 1.5rem; }
+  .about-info {
+    grid-template-areas: 'bioimage' 'bio' 'job-1' 'job-2' 'job-3';
+    grid-template-columns: 1fr; } }
 
 @media screen and (max-width: 500px) {
   main {

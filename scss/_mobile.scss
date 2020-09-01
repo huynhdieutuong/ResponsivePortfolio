@@ -11,13 +11,17 @@
   main {
     text-align: center;
 
-    &#home h1 {
-      margin-top: 10vh;
+    h1 {
       margin-bottom: 1rem;
       line-height: 1.2;
     }
+
+    &#home h1 {
+      margin-top: 10vh;
+    }
   }
 
+  // Menu overlay
   .menu {
     flex-direction: column;
 
@@ -44,6 +48,17 @@
         font-size: 1.5rem;
       }
     }
+  }
+
+  // About
+  .about-info {
+    grid-template-areas:
+      'bioimage'
+      'bio'
+      'job-1'
+      'job-2'
+      'job-3';
+    grid-template-columns: 1fr;
   }
 }
 
