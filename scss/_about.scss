@@ -4,9 +4,9 @@
     'bioimage bio bio'
     'job-1 job-2 job-3';
   grid-gap: 2rem;
-  padding: 2rem 0;
   grid-template-columns: repeat(3, 1fr);
   font-size: 1.2rem;
+  margin: 2rem 0;
 
   .bio-image {
     grid-area: bioimage;
@@ -14,7 +14,7 @@
     width: 100%;
     margin: auto;
     border-radius: 50%;
-    border: 3px solid $primary-color;
+    border: 3px solid $secondary-color;
   }
 
   .bio {
